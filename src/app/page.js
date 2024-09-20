@@ -18,9 +18,6 @@ console.log(graph.isEmpty());
 console.log(graph.hasNode('A'));
 
 
-
-
-
   return (
     <></>
   );
