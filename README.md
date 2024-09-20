@@ -9,8 +9,6 @@ This project implements a Graph (Tipo Abstracto de Datos - Abstract Data Type) i
 3. [Usage](#usage)
 4. [API Reference](#api-reference)
 5. [Examples](#examples)
-6. [Contributing](#contributing)
-7. [License](#license)
 
 ## Features
 
