@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Graph TAD Implementation for Next.js
 
-## Getting Started
+This project implements a Graph (Tipo Abstracto de Datos - Abstract Data Type) in JavaScript, designed for use in Next.js applications. The graph structure is versatile and can be used to model various relationships and connections in your data.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [API Reference](#api-reference)
+5. [Examples](#examples)
+6. [Contributing](#contributing)
+7. [License](#license)
+
+## Features
+
+- Undirected graph implementation
+- Add and remove nodes and edges
+- Check for edge existence
+- Get adjacent nodes
+- Depth-First Search (DFS) traversal
+- Easily integrable with Next.js projects
+
+## Installation
+
+1. Create a new file named `Graph.js` in your project's utility folder (e.g., `src/utils/`).
+2. Copy the Graph class implementation into this file.
+3. Export the class at the end of the file:
+
+```javascript
+export default Graph;
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+To use the Graph class in your Next.js components or pages:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Import the Graph class:
 
-## Learn More
+```javascript
+import Graph from '../utils/Graph';
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. Create a new instance of the Graph:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```javascript
+const graph = new Graph();
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Use the graph methods as needed in your component logic.
 
-## Deploy on Vercel
+## API Reference
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### `constructor()`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Creates a new instance of the Graph.
+
+### `addNode(node)`
+
+Adds a new node to the graph.
+
+### `addEdge(node1, node2)`
+
+Adds an edge between two nodes. If the nodes don't exist, they are created.
+
+### `removeNode(node)`
+
+Removes a node and all its connections from the graph.
+
+### `removeEdge(node1, node2)`
+
+Removes the edge between two nodes.
+
+### `hasEdge(node1, node2)`
+
+Returns true if there's an edge between the two nodes, false otherwise.
+
+### `getAdjacentNodes(node)`
+
+Returns an array of all nodes connected to the given node.
+
+### `depthFirstSearch(startNode, visited = new Set())`
+
+Performs a depth-first search traversal starting from the given node.
+
+## Examples
+
+Here's a basic example of how to use the Graph class:
+
+```javascript
+import Graph from '../utils/Graph';
+
+const MyComponent = () => {
+  const graph = new Graph();
+  
+  graph.addEdge('A', 'B');
+  graph.addEdge('B', 'C');
+  graph.addEdge('C', 'D');
+  graph.addEdge('D', 'A');
+
+  console.log(graph.hasEdge('A', 'B')); // true
+  console.log(graph.getAdjacentNodes('A')); // ['B', 'D']
+
+  graph.depthFirstSearch('A');
+
+  return (
+    // Your JSX here
+  );
+};
+```
