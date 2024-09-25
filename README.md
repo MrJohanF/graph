@@ -1,94 +1,94 @@
-# Graph TAD Implementation for Next.js
+# Implementación de Grafo TAD para Next.js
 
-This project implements a Graph (Tipo Abstracto de Datos - Abstract Data Type) in JavaScript, designed for use in Next.js applications. The graph structure is versatile and can be used to model various relationships and connections in your data.
+Este proyecto implementa un Grafo (Tipo Abstracto de Datos) en JavaScript, diseñado para su uso en aplicaciones Next.js. La estructura del grafo es versátil y puede utilizarse para modelar diversas relaciones y conexiones en tus datos.
 
-## Table of Contents
+## Tabla de Contenidos
 
-1. [Features](#features)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [API Reference](#api-reference)
-5. [Examples](#examples)
+1. [Características](#características)
+2. [Instalación](#instalación)
+3. [Uso](#uso)
+4. [Referencia de API](#referencia-de-api)
+5. [Ejemplos](#ejemplos)
 
-## Features
+## Características
 
-- Undirected graph implementation
-- Add and remove nodes and edges
-- Check for edge existence
-- Get adjacent nodes
-- Depth-First Search (DFS) traversal
-- Easily integrable with Next.js projects
+- Implementación de grafo no dirigido
+- Añadir y eliminar nodos y aristas
+- Comprobar la existencia de aristas
+- Obtener nodos adyacentes
+- Recorrido en profundidad (DFS)
+- Fácilmente integrable con proyectos Next.js
 
-## Installation
+## Instalación
 
-1. Create a new file named `Graph.js` in your project's utility folder (e.g., `src/utils/`).
-2. Copy the Graph class implementation into this file.
-3. Export the class at the end of the file:
+1. Crea un nuevo archivo llamado `Graph.js` en la carpeta de utilidades de tu proyecto (por ejemplo, `src/utils/`).
+2. Copia la implementación de la clase Graph en este archivo.
+3. Exporta la clase al final del archivo:
 
 ```javascript
 export default Graph;
 ```
 
-## Usage
+## Uso
 
-To use the Graph class in your Next.js components or pages:
+Para usar la clase Graph en tus componentes o páginas de Next.js:
 
-1. Import the Graph class:
+1. Importa la clase Graph:
 
 ```javascript
 import Graph from '../utils/Graph';
 ```
 
-2. Create a new instance of the Graph:
+2. Crea una nueva instancia de Graph:
 
 ```javascript
 const graph = new Graph();
 ```
 
-3. Use the graph methods as needed in your component logic.
+3. Utiliza los métodos del grafo según sea necesario en la lógica de tu componente.
 
-## API Reference
+## Referencia de API
 
 ### `constructor()`
 
-Creates a new instance of the Graph.
+Crea una nueva instancia del Grafo.
 
 ### `addNode(node)`
 
-Adds a new node to the graph.
+Añade un nuevo nodo al grafo.
 
 ### `addEdge(node1, node2)`
 
-Adds an edge between two nodes. If the nodes don't exist, they are created.
+Añade una arista entre dos nodos. Si los nodos no existen, se crean.
 
 ### `removeNode(node)`
 
-Removes a node and all its connections from the graph.
+Elimina un nodo y todas sus conexiones del grafo.
 
 ### `removeEdge(node1, node2)`
 
-Removes the edge between two nodes.
+Elimina la arista entre dos nodos.
 
 ### `hasEdge(node1, node2)`
 
-Returns true if there's an edge between the two nodes, false otherwise.
+Devuelve true si hay una arista entre los dos nodos, false en caso contrario.
 
 ### `getAdjacentNodes(node)`
 
-Returns an array of all nodes connected to the given node.
+Devuelve un array de todos los nodos conectados al nodo dado.
 
 ### `depthFirstSearch(startNode, visited = new Set())`
 
-Performs a depth-first search traversal starting from the given node.
+Realiza un recorrido en profundidad comenzando desde el nodo dado.
 
-## Examples
+## Ejemplos
 
-Here's a basic example of how to use the Graph class:
+Aquí tienes un ejemplo básico de cómo usar la clase Graph:
 
 ```javascript
 import Graph from '../utils/Graph';
 
-const MyComponent = () => {
+const MiComponente = () => {
   const graph = new Graph();
   
   graph.addEdge('A', 'B');
@@ -102,7 +102,7 @@ const MyComponent = () => {
   graph.depthFirstSearch('A');
 
   return (
-    // Your JSX here
+    // Tu JSX aquí
   );
 };
 ```
